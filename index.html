@@ -72,6 +72,57 @@ main{width:min(1320px,calc(100% - 48px));margin:auto;padding:32px 0 68px}.intro{
 .editor-head>div{min-width:0}.editor-head h2{max-width:min(48vw,520px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.canvas-wrap{background:#eef2f6}.canvas-wrap.has-transparency{background:repeating-conic-gradient(#f2f5f8 0 25%,#e1e7ee 0 50%) 50%/22px 22px}.thumb{object-fit:cover;background:#e5ebf2}.batch-actions{display:flex;align-items:center;gap:4px;padding:0 10px 8px}.batch-actions button{padding:5px 7px;border:0;border-radius:6px;background:transparent;color:var(--blue-dark);font-size:11px;font-weight:750}.batch-actions button:hover{background:var(--blue-soft)}.batch-actions .danger-link{margin-left:auto;color:var(--red)}.upload-issues{margin:0 9px 13px;padding:9px;border-radius:8px;background:var(--red-bg);color:var(--red);font-size:11px}.preset-grid button{display:grid;grid-template-columns:34px 1fr;align-items:center;gap:9px}.preset-icon{position:relative;display:block;width:30px;height:30px;border:1px solid #c5d1df;border-radius:7px;background:#f7f9fc}.preset-icon:before{content:"";position:absolute;left:50%;top:5px;width:9px;height:10px;transform:translateX(-50%);border:1.5px solid currentColor;border-radius:50%}.preset-icon:after{content:"";position:absolute;left:50%;bottom:4px;transform:translateX(-50%);border:1.5px solid currentColor;border-bottom:0;border-radius:12px 12px 0 0}.head-shoulders:after{width:21px;height:10px}.headshot:before{top:4px;width:11px;height:13px}.headshot:after{width:16px;height:7px}.upper-body:after{bottom:2px;width:25px;height:14px}.preset-grid button.active .preset-icon{border-color:#91afd5;background:#fff;color:var(--blue)}.preset-caution{margin:9px 0 0;color:var(--muted);font-size:11px;line-height:1.4}.selection-names,.selection-warning{margin:5px 0;color:var(--muted);font-size:11px;overflow-wrap:anywhere}.selection-warning{padding:6px 8px;border-radius:6px;background:var(--amber-bg);color:var(--amber);font-weight:750}.selection-card>div{margin-bottom:2px}.selection-card .btn{margin-top:7px}.photo-row.error{border-color:#efc7c3;background:#fff7f6}.photo-row.error .row-status{background:var(--red)}.photo-row.error .photo-copy small{color:var(--red)}
 @media(max-width:700px){.editor-head h2{max-width:60vw}.batch-actions{padding-bottom:10px}.selection-names,.selection-warning{font-size:12px}}
 
+/* Compact editor pass: preserve the three-column workflow while keeping review in view. */
+.workspace-active main{padding-top:14px}
+.workspace-active .intro{display:flex;align-items:baseline;justify-content:center;gap:12px;min-width:0}
+.workspace-active .intro .eyebrow{display:none}
+.workspace-active .intro h1{margin:0;font-size:24px;letter-spacing:-.6px;white-space:nowrap}
+.workspace-active .intro>p:last-child{margin:0;font-size:13px;white-space:nowrap}
+.workspace-active .tool-frame{margin-top:12px}
+.tool-frame{padding:5px;border-radius:21px;box-shadow:0 7px 22px rgba(41,76,132,.11)}
+.tool-shell{border-radius:16px}
+.modebar{min-height:54px;padding:8px 14px}
+.panel-heading,.editor-head{height:58px;padding:10px 14px}
+.editor-actions{position:sticky;bottom:0;z-index:12;min-height:68px;height:auto;padding:12px 14px;background:#fff;box-shadow:0 -8px 20px rgba(23,36,58,.07)}
+.results-grid{grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px}
+.result-card canvas{aspect-ratio:4/5}
+.result-card>div{padding:9px}
+.how-toggle{display:none;margin:0 auto;padding:6px 2px;border:0;background:transparent;color:var(--blue-dark);font-size:13px;font-weight:750}
+.how-toggle span{display:grid;place-items:center;width:22px;height:22px;margin-left:7px;border:1px solid #bdcbe0;border-radius:50%;background:#fff;font-size:15px;line-height:1}
+.how-it-works.compact{margin-top:18px}
+.how-it-works.compact .how-toggle{display:inline-flex;align-items:center}
+.how-it-works.compact:not(.expanded) .how-heading,.how-it-works.compact:not(.expanded) .how-grid{display:none}
+.how-it-works.compact.expanded .how-toggle{margin-bottom:18px}
+
+@media(min-width:1001px){
+  .workspace{height:560px;min-height:0}
+  .photo-panel,.editor-panel,.settings-panel{min-height:0}
+  .photo-panel{display:flex;flex-direction:column}
+  .photo-list{min-height:0;max-height:none;overflow-y:auto}
+  .upload-actions{margin-top:auto}
+  .editor-panel{display:flex;flex-direction:column}
+  .canvas-wrap{display:flex;min-height:0;flex:1;flex-direction:column;padding:16px 18px 9px}
+  .crop-stage{min-height:0;flex:1}
+  .crop-stage canvas{max-height:380px}
+  .drag-hint{margin-top:7px}
+  .settings-scroll{min-height:0;padding:14px;overflow-y:auto}
+  .settings-panel h2{margin-bottom:12px}
+  .preset-label{margin-top:13px}
+  .control{margin-top:12px}
+  .divider{margin:12px 0}
+}
+
+@media(max-width:700px){
+  .workspace-active .intro{display:block;text-align:center}
+  .workspace-active .intro h1{font-size:22px}
+  .workspace-active .intro>p:last-child{display:none}
+  .workspace-active .tool-frame{margin-top:10px}
+  .tool-frame{padding:4px;border-radius:18px}
+  .tool-shell{border-radius:14px}
+  .editor-actions{position:sticky;bottom:0}
+  .how-it-works.compact{margin-top:14px}
+}
+
   </style>
 </head>
 <body>
@@ -143,8 +194,8 @@ main{width:min(1320px,calc(100% - 48px));margin:auto;padding:32px 0 68px}.intro{
               <button class="icon-button" id="addBtn" type="button" aria-label="Add photos">＋</button>
               <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden>
             </div>
-            <div class="batch-summary"><span id="selectedCount">0 selected</span><span id="batchStatus"><b class="ready-dot"></b> 0 ready · 0 attention</span></div>
-            <div class="filter-row" aria-label="Photo filters"><button class="active" data-filter="all" aria-pressed="true" type="button">All</button><button data-filter="ready" aria-pressed="false" type="button">Ready</button><button data-filter="attention" aria-pressed="false" type="button">Attention</button></div>
+            <div class="batch-summary"><span id="selectedCount">0 selected</span><span id="batchStatus"><b class="ready-dot"></b> 0 loaded · 0 attention</span></div>
+            <div class="filter-row" aria-label="Photo filters"><button class="active" data-filter="all" aria-pressed="true" type="button">All</button><button data-filter="ready" aria-pressed="false" type="button">Loaded</button><button data-filter="attention" aria-pressed="false" type="button">Attention</button></div>
             <div class="batch-actions"><button id="selectAllBtn" type="button">Select all</button><button id="selectNoneBtn" type="button">Select none</button><button id="removeSelectedBtn" class="danger-link" type="button">Remove</button></div>
             <div class="photo-list" id="photoList"></div>
             <div class="upload-actions"><button class="add-photos" id="addMoreBtn" type="button">＋ Upload photos</button><button class="sample-action" id="trySamplesBtn" type="button">Try sample workspace</button><button class="sample-action" id="clearSamplesBtn" type="button" hidden>Clear samples</button></div>
@@ -209,8 +260,9 @@ main{width:min(1320px,calc(100% - 48px));margin:auto;padding:32px 0 68px}.intro{
     </div>
 
     <section class="how-it-works" id="howItWorks" aria-labelledby="howItWorksTitle">
+      <button class="how-toggle" id="howToggle" type="button" aria-expanded="true" aria-controls="howGrid">How it works <span aria-hidden="true">−</span></button>
       <div class="how-heading"><span>HOW IT WORKS</span><h2 id="howItWorksTitle">From portraits to consistent crops</h2></div>
-      <div class="how-grid">
+      <div class="how-grid" id="howGrid">
         <article><span class="how-step">01</span><div><h3>Add your portraits</h3><p>Upload one photo or a batch to start framing.</p></div></article>
         <article><span class="how-step">02</span><div><h3>Adjust the framing</h3><p>Choose a ratio or preset, then position the crop around your subject.</p></div></article>
         <article><span class="how-step">03</span><div><h3>Review each crop</h3><p>Compare the source and crop preview, then approve the framing.</p></div></article>
@@ -227,7 +279,7 @@ main{width:min(1320px,calc(100% - 48px));margin:auto;padding:32px 0 68px}.intro{
       <p class="modal-kicker">STEP 3 · REVIEW</p><h2>Check this portrait crop</h2>
       <p>Confirm the framing before adding it to Results.</p>
       <div class="review-compare"><div><span>Source</span><canvas id="reviewSource"></canvas></div><div><span>Crop preview</span><canvas id="reviewCrop"></canvas></div></div>
-      <div class="review-status"><span>✓</span><p><b>Ready for your approval</b><small>This is a preview of your current frame. Nothing has been processed remotely.</small></p></div>
+      <div class="review-status"><span>✓</span><p><b>Preview ready for review</b><small>This confirms only that the preview is available. It does not verify face framing or ID-photo requirements.</small></p></div>
       <div class="modal-actions"><button class="btn secondary" id="keepEditingBtn" value="cancel">Keep editing</button><button class="btn primary" id="acceptBtn" value="default">Accept &amp; view result</button></div>
     </form>
   </dialog>
@@ -300,15 +352,15 @@ function selectedPhotos(){return photos.filter(photo=>photo.selected)}
 function acceptedPhotos(){return photos.filter(photo=>photo.accepted)}
 function visiblePhoto(photo){return filter==='all'||photo.status===filter}
 function setTopStatus(message='',tone='') {const status=$('topStatus');status.hidden=!message;status.classList.toggle('success',tone==='success');status.classList.toggle('error',tone==='error');status.querySelector('span').textContent=message}
-function updateExperience(){const hasPhotos=photos.length>0;if(!hasPhotos)view='upload';else if(view==='upload')view='editor';$('initialUpload').hidden=view!=='upload';$('modebar').hidden=view!=='editor';$('workspace').hidden=view!=='editor';$('resultsSection').hidden=view!=='results';if(view==='upload'&&!importing&&$('initialUploadIssues').hidden)setTopStatus('');return hasPhotos}
+function updateExperience(){const hasPhotos=photos.length>0;if(!hasPhotos)view='upload';else if(view==='upload')view='editor';$('initialUpload').hidden=view!=='upload';$('modebar').hidden=view!=='editor';$('workspace').hidden=view!=='editor';$('resultsSection').hidden=view!=='results';document.body.classList.toggle('workspace-active',hasPhotos);const how=$('howItWorks'),toggle=$('howToggle');how.classList.toggle('compact',hasPhotos);if(!hasPhotos)how.classList.remove('expanded');const expanded=!hasPhotos||how.classList.contains('expanded');toggle.setAttribute('aria-expanded',String(expanded));toggle.querySelector('span').textContent=expanded?'−':'+';if(view==='upload'&&!importing&&$('initialUploadIssues').hidden)setTopStatus('');return hasPhotos}
 function setView(next){view=photos.length?next:'upload';updateExperience()}
 
 function renderPhotos(){
   updateExperience();
   $('photoCount').textContent=photos.length;
   const ready=photos.filter(photo=>photo.status==='ready').length,attention=photos.filter(photo=>photo.status==='attention').length;
-  $('batchStatus').innerHTML=`<b class="ready-dot"></b> ${ready} ready to edit · ${attention} attention`;
-  $('photoList').innerHTML=photos.map((p,i)=>`<div class="photo-row ${i===active?'active':''} ${p.accepted?'accepted':''}" data-index="${i}" tabindex="0" role="button" ${visiblePhoto(p)?'':'hidden'}><input class="photo-check" type="checkbox" ${p.selected?'checked':''} aria-label="Select ${escapeHtml(p.name)}"><img class="thumb" src="${p.src}" alt=""><span class="photo-copy"><b title="${escapeHtml(p.name)}">${escapeHtml(p.name)}${p.isUpload?'':' <em class="sample-badge">SAMPLE</em>'}</b><small>${p.sizeLabel} · ${p.accepted?'Accepted':p.status==='attention'?'Needs attention':'Ready to edit'}</small></span><span class="row-end">${i===active?'<em class="editing-badge">EDITING</em>':''}<i class="row-status ${p.status==='attention'?'attention':''}"></i></span></div>`).join('');
+  $('batchStatus').innerHTML=`<b class="ready-dot"></b> ${ready} loaded · ${attention} attention`;
+  $('photoList').innerHTML=photos.map((p,i)=>`<div class="photo-row ${i===active?'active':''} ${p.accepted?'accepted':''}" data-index="${i}" tabindex="0" role="button" ${visiblePhoto(p)?'':'hidden'}><input class="photo-check" type="checkbox" ${p.selected?'checked':''} aria-label="Select ${escapeHtml(p.name)} as a batch target"><img class="thumb" src="${p.src}" alt=""><span class="photo-copy"><b title="${escapeHtml(p.name)}">${escapeHtml(p.name)}${p.isUpload?'':' <em class="sample-badge">SAMPLE</em>'}</b><small>${p.sizeLabel} · ${p.accepted?'Accepted crop':p.status==='attention'?'Needs attention':'Image loaded'}</small></span><span class="row-end">${i===active?'<em class="editing-badge">EDITING</em>':''}<i class="row-status ${p.status==='attention'?'attention':''}"></i></span></div>`).join('');
   $('clearSamplesBtn').hidden=!photos.some(photo=>!photo.isUpload);
   document.querySelectorAll('.photo-row').forEach(row=>{
     const index=Number(row.dataset.index),checkbox=row.querySelector('.photo-check');
@@ -319,7 +371,8 @@ function renderPhotos(){
   updateSelectionSummary();
 }
 function escapeHtml(value){return value.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
-function updateSelectionSummary(){const selected=selectedPhotos(),count=selected.length,photo=activePhoto(),targets=photo?selected.filter(item=>item!==photo):[];$('selectedCount').textContent=`${count} selected`;$('selectionText').textContent=`${count} photo${count===1?'':'s'} selected`;$('selectionNames').textContent=count?`Selected: ${selected.slice(0,2).map(item=>item.name).join(', ')}${count>2?` +${count-2} more`:''}`:'Selected: none';$('selectionWarning').hidden=!photo||photo.selected;$('applyBtn').textContent=targets.length?`${auto?'Preview':'Apply'} relative framing to ${targets.length} other photo${targets.length===1?'':'s'}`:'Select another photo to apply framing';$('applyBtn').disabled=importing||!photo||!targets.length;$('selectionHint').textContent=!photo?'Add a valid photo to start framing.':!targets.length?'Select at least one other photo; the source draft stays unchanged.':photo.ratio==='free'?'Free mode copies relative X, Y, width and height; output pixel ratio may differ across image shapes.':`Source: ${photo.name} · Applied drafts still require individual review.`}
+function compactLabel(value,max=22){return value.length>max?`${value.slice(0,max-1)}…`:value}
+function updateSelectionSummary(){const selected=selectedPhotos(),count=selected.length,photo=activePhoto(),targets=photo?selected.filter(item=>item!==photo):[];$('selectedCount').textContent=`${count} selected`;$('selectionText').textContent=`${targets.length} batch target${targets.length===1?'':'s'}`;$('selectionNames').textContent=targets.length?`Target${targets.length===1?'':'s'}: ${targets.slice(0,2).map(item=>item.name).join(', ')}${targets.length>2?` +${targets.length-2} more`:''}`:'Targets: none';$('selectionWarning').hidden=!photo||!photo.selected;$('selectionWarning').textContent='The editing photo is the source and will not be changed.';const source=photo?compactLabel(photo.name):'';$('applyBtn').textContent=targets.length?targets.length===1?`${auto?'Preview':'Apply'} frame from ${source} to ${compactLabel(targets[0].name)}`:`${auto?'Preview':'Apply'} frame from ${source} to ${targets.length} selected photos`:'Select target photos to apply framing';$('applyBtn').disabled=importing||!photo||!targets.length;$('selectionHint').textContent=!photo?'Add a valid photo to start framing.':!targets.length?`Source: ${photo.name} · Select one or more different photos as targets.`:photo.ratio==='free'?`Source: ${photo.name} · Free mode copies relative X, Y, width and height.`:`Source: ${photo.name} · Every target still requires individual review.`}
 function syncControls(photo){const center=Math.round((photo.crop.y+photo.crop.h/2)*1000)/10,zoom=Math.max(1,Math.round(118*.72/photo.crop.w));photo.vertical=center;photo.zoom=zoom;$('zoomRange').max=Math.max(300,zoom);$('zoomRange').value=zoom;$('verticalRange').min=Math.round(photo.crop.h*50);$('verticalRange').max=Math.round((1-photo.crop.h/2)*100);$('verticalRange').value=center;$('zoomValue').textContent=zoom+'%';$('verticalValue').textContent=center+'%';syncAdvanced(photo)}
 function syncAdvanced(photo){for(const [id,key] of [['cropX','x'],['cropY','y'],['cropW','w'],['cropH','h']])$(id).value=(photo.crop[key]*100).toFixed(1)}
 function setWorkspaceEnabled(enabled){editableIds.forEach(id=>{if($(id))$(id).disabled=!enabled});document.querySelectorAll('#presetGrid button').forEach(button=>button.disabled=!enabled);$('emptyEditor').hidden=enabled;if(!enabled){$('activeName').textContent='No photo added';$('activeName').title='';const canvas=$('editorCanvas');canvas.width=0;canvas.height=0;setStep('upload')}updateExperience();updateSelectionSummary()}
@@ -388,6 +441,7 @@ function toggleMobileMenu(force){const menu=$('mobileMenu'),open=force??menu.hid
 
 $('manualMode').onclick=()=>setMode(false);$('autoMode').onclick=()=>setMode(true);$('accountBtn').onclick=()=>$('accountDialog').showModal();$('walletBtn').onclick=()=>$('walletDialog').showModal();$('dashboardBtn').onclick=()=>toast('Dashboard belongs to the shared Printcart platform and is not created by this Face Crop prototype.');$('mobileMenuBtn').onclick=event=>{event.stopPropagation();toggleMobileMenu()};
 $('mobileMenu').onclick=event=>{const action=event.target.dataset.headerAction;if(!action)return;toggleMobileMenu(false);if(action==='wallet')$('walletDialog').showModal();else if(action==='account')$('accountDialog').showModal();else toast('Dashboard handoff requires the shared Printcart platform.')};document.addEventListener('click',event=>{if(!$('mobileMenu').contains(event.target)&&event.target!==$('mobileMenuBtn'))toggleMobileMenu(false)});
+$('howToggle').onclick=()=>{const how=$('howItWorks'),expanded=how.classList.toggle('expanded');$('howToggle').setAttribute('aria-expanded',String(expanded));$('howToggle').querySelector('span').textContent=expanded?'−':'+'};
 $('initialUploadBtn').onclick=$('addBtn').onclick=$('addMoreBtn').onclick=()=>$('fileInput').click();$('initialSampleBtn').onclick=$('trySamplesBtn').onclick=loadSamples;$('clearSamplesBtn').onclick=clearSamples;$('fileInput').onchange=async event=>{await addFiles(event.target.files);event.target.value=''};document.querySelectorAll('.filter-row button').forEach(button=>button.onclick=()=>handleFilter(button.dataset.filter));
 $('selectAllBtn').onclick=()=>selectAll(true);$('selectNoneBtn').onclick=()=>selectAll(false);$('removeSelectedBtn').onclick=removeSelected;
 $('ratioSelect').onchange=event=>setRatio(event.target.value);$('zoomRange').oninput=applyRange;$('verticalRange').oninput=applyRange;$('guideToggle').onchange=event=>{guide=event.target.checked;drawEditor()};$('resetBtn').onclick=resetFrame;
