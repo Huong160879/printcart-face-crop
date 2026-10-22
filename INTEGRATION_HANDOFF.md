@@ -25,11 +25,24 @@ Luồng cần giữ:
 
 ## 3. Điểm IT cần tích hợp
 
+### 3.0 Shared design system
+
+Baseline đã chuẩn hóa lớp hiển thị dùng chung theo AI Artwork Upscaler:
+
+- Nền trang `#FBFCFE`; nền editor `#EEF2F6` chỉ dùng để tách vùng thao tác ảnh.
+- Màu chính `#466FB5`, màu hover/đậm `#315D9F`, nền xanh nhạt `#EDF3FB`.
+- Header hiển thị `Dashboard`, `My Files`, `Tokens` và `Sign in`; các nút chỉ là integration surface cho tới khi shared services được nối thật.
+- Modal dùng tên `Shared Token Wallet`; header dùng nhãn ngắn `Tokens` và phải phản ánh số dư thật sau khi tích hợp.
+- How it works dùng cấu trúc chung của Upscaler nhưng giữ nội dung và bốn bước riêng của Face Crop; được phép thu gọn trong workspace.
+
+Không thay shared shell bằng một bản gần giống theo từng tool. IT nên đưa các token/component này về package hoặc design-system source chung để tránh lệch tiếp theo.
+
 ### 3.1 Header, Account và Dashboard
 
 - Thay header prototype bằng shared Printcart header/component.
 - Nút Sign in dùng luồng xác thực chung.
 - Dashboard trỏ về Dashboard chung; không tạo Dashboard riêng.
+- My Files trỏ về thư viện dùng chung; không tạo kho file riêng cho Face Crop.
 - Trạng thái đăng nhập không được làm mất crop draft đang có trong tab.
 
 ### 3.2 Shared Token Wallet

@@ -22,10 +22,12 @@ Face Crop là bản baseline để đội IT tích hợp vào Printcart và tri�
 - Yêu cầu duyệt lại khi tỷ lệ xuất làm thay đổi framing.
 - Xuất từng ảnh hoặc ZIP có `manifest.csv`.
 - Bố cục desktop ba cột và bố cục mobile theo chiều dọc.
+- Shared shell theo Upscale: nền trang `#FBFCFE`, header Dashboard/My Files/Shared Token Wallet/Account và component How it works chung.
 
 Chưa được tích hợp production:
 
 - Account, Dashboard và Shared Token Wallet của Printcart.
+- Điều hướng thật từ Dashboard/My Files và dữ liệu tài khoản dùng chung.
 - Lưu hoặc khôi phục phiên làm việc.
 - Ghi nhận usage vào hệ thống Printcart.
 - Chuyển kết quả sang Online Design.

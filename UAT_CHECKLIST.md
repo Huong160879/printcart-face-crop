@@ -93,6 +93,8 @@
 | X06 | Zoom 200% | Nội dung không mất hoặc chồng nhau | |
 | X07 | Contrast | Text, focus, disabled và error đạt chuẩn dự án | |
 | X08 | Touch crop | Kéo crop không chặn cuộn trang ngoài ý muốn | |
+| X09 | Shared shell | Nền trang, header, button và How it works khớp design-system build được duyệt | |
+| X10 | Editor surface | Nền editor tách biệt nhưng không làm thay đổi nền trang chung | |
 
 ## 7. Trình duyệt và độ bền
 
@@ -121,6 +123,7 @@ Các kiểm tra bổ sung:
 | --- | --- | --- | --- |
 | I01 | Sign in chung | Dùng shared account, không tạo tài khoản Face Crop | |
 | I02 | Dashboard chung | Điều hướng đúng scope và không mất dữ liệu ngoài dự kiến | |
+| I02a | My Files chung | Mở đúng thư viện và không tạo kho file riêng cho Face Crop | |
 | I03 | Token miễn phí | Auto local không phát sinh charge | |
 | I04 | Thao tác tính phí nếu có | Báo giá và xác nhận trước; ledger dùng ví chung | |
 | I05 | Lưu/khôi phục nếu thuộc MVP | Quyền sở hữu, version và crop khớp | |
