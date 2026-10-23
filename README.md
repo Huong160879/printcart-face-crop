@@ -21,6 +21,7 @@ Face Crop là bản baseline để đội IT tích hợp vào Printcart và tri�
 - Results, kích thước đầu ra, Crop to fill và Fit with white background.
 - Yêu cầu duyệt lại khi tỷ lệ xuất làm thay đổi framing.
 - Xuất từng ảnh hoặc ZIP có `manifest.csv`.
+- Đánh giá 1–5 sao và nhận xét tối đa 500 ký tự sau khi có Results; prototype lưu theo mã job và phiên bản kết quả chỉ trong trình duyệt.
 - Bố cục desktop ba cột và bố cục mobile theo chiều dọc.
 - Shared shell theo Upscale: nền trang `#FBFCFE`, header Dashboard/My Files/Shared Token Wallet/Account và component How it works chung.
 
@@ -32,6 +33,7 @@ Chưa được tích hợp production:
 - Ghi nhận usage vào hệ thống Printcart.
 - Chuyển kết quả sang Online Design.
 - Backend upload, xử lý ảnh hoặc lưu trữ lâu dài.
+- Gửi phản hồi về Dashboard/server Printcart.
 
 ## Chạy local
 

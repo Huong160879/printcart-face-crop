@@ -77,10 +77,24 @@ Các event đề xuất:
 | `face_crop_review_accepted` | mode Manual/Auto, ratio, preset |
 | `face_crop_export_requested` | số lượng, kích thước, format, fit |
 | `face_crop_export_failed` | error code và giai đoạn |
+| `face_crop_feedback_submitted` | job ID, result version, rating 1–5, comment tùy chọn, thời gian |
 
 Không gửi tên file đầy đủ hoặc dữ liệu khuôn mặt nếu chưa được phê duyệt về quyền riêng tư.
 
-### 3.5 Online Design handoff
+### 3.5 Feedback handoff
+
+Prototype hiển thị feedback tại Results sau khi có ít nhất một crop được Accept. Dữ liệu hiện được lưu bằng `localStorage` với khóa `printcart.faceCrop.feedback.v1`; đây không phải xác nhận server đã nhận phản hồi.
+
+Khi tích hợp production:
+
+- Gắn feedback với `jobId`, `resultVersion`, người dùng/store scope và build của công cụ.
+- Rating bắt buộc trong khoảng 1–5; comment tùy chọn, tối đa 500 ký tự.
+- Chống gửi lặp theo `jobId + resultVersion`, nhưng cho phép chính sách cập nhật nếu Product yêu cầu.
+- Chỉ hiện cảm ơn sau khi API xác nhận; nếu gửi lỗi, giữ nội dung và cho phép retry.
+- Áp dụng retention, moderation, access control và chính sách dữ liệu cá nhân cho comment.
+- Không gửi ảnh, crop Blob hoặc dữ liệu sinh trắc học kèm feedback.
+
+### 3.6 Online Design handoff
 
 Nếu nằm trong MVP:
 

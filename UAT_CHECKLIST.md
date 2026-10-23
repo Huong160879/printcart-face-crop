@@ -129,6 +129,9 @@ Các kiểm tra bổ sung:
 | I05 | Lưu/khôi phục nếu thuộc MVP | Quyền sở hữu, version và crop khớp | |
 | I06 | Online Design nếu thuộc MVP | Chỉ chuyển asset thật đã lưu; retry khi lỗi | |
 | I07 | Telemetry | Không ghi raw image, biometric data hoặc credential URL | |
+| I08 | Feedback chưa chọn sao | Submit bị khóa; comment giới hạn 500 ký tự | |
+| I09 | Feedback hợp lệ | Gắn đúng job ID và result version; không gửi ảnh hoặc biometric data | |
+| I10 | Feedback API lỗi | Giữ rating/comment, báo lỗi và cho phép retry; không hiện cảm ơn giả | |
 
 ## 9. Điều kiện nghiệm thu production
 
